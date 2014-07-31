@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" class="demo-2 no-js">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+		<meta name="viewport" content="width=device-width, initial-scale=1"> 
+		<title>Shape Hover Effect with SVG | Demo 2</title>
+		<meta name="description" content="Hover Effects with animated SVG Shapes using Snap.svg" />
+		<meta name="keywords" content="animated svg, hover effect, grid, svg shape html, " />
+		<meta name="author" content="Codrops" />
+		<link rel="shortcut icon" href="../favicon.ico">
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/snap.svg-min.js"></script>
+		<!--[if IE]>
+  		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+	</head>
+	<body>
+			<section id="grid" class="grid clearfix">
+
+				
+						
+						<span class="top" data-path-hover="M280.877,0H39.123C17.516,0,0,17.516,0,39.123v39.123h39.123h241.755H320V39.123
+								C320,17.516,302.484,0,280.877,0z">
+								
+							<svg viewBox="0 0 320 80" preserveAspectRatio="none"><path d="M280,0C299.5,0,56.245,0,39.123,0S0,0,0,0v78.245h39.123h241.755H320V0C320,0,260.5,0,280,0z"/></svg>
+						
+						</span>
+
+										
+						<span class="mid" data-path-hover="M320,39.123c0,21.607-17.516,39.123-39.123,39.123H39.123C17.516,78.245,0,60.729,0,39.123l0,0
+							C0,17.516,17.516,0,39.123,0h241.755C302.484,0,320,17.516,320,39.123L320,39.123z">
+							
+							<svg viewBox="0 0 320 80" preserveAspectRatio="none"><path d="M320,78.245c0,0-17.516,0-39.123,0H39.123c-21.607,0-39.123,0-39.123,0V0c0,0,17.516,0,39.123,0h241.755
+							C302.484,0,320,0,320,0V78.245z"/></svg>
+							
+						</span>
+
+							
+						
+						<span class="bottom" data-path-hover="M39.123,78.245h241.755c21.607,0,39.123-17.516,39.123-39.123V0l-39.123,0L39.123,0L0,0l0,39.123
+							C0,60.729,17.516,78.245,39.123,78.245z">
+							
+							<svg viewBox="0 0 320 80" preserveAspectRatio="none"><path d="M39.123,78.245h241.755c21.607,0,39.123,0,39.123,0V0l-39.123,0L39.123,0L0,0l0,78.245
+							C0,78.245,17.516,78.245,39.123,78.245z"/></svg>
+							
+						</span>
+
+			</section>
+		<script>
+			(function() {
+	
+				function init() {
+					var speed = 330,
+						easing = mina.backout;
+
+					[].slice.call ( document.querySelectorAll( 'span' ) ).forEach( function( el ) {
+						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
+							pathConfig = {
+								from : path.attr( 'd' ),
+								to : el.getAttribute( 'data-path-hover' )
+							};
+
+						el.addEventListener( 'mouseenter', function() {
+							path.animate( { 'path' : pathConfig.to }, speed, easing );
+						} );
+
+						el.addEventListener( 'mouseleave', function() {
+							path.animate( { 'path' : pathConfig.from }, speed, easing );
+						} );
+					} );
+				}
+
+				init();
+
+			})();
+			
+			
+		</script>
+	</body>
+</html>

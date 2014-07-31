@@ -1,0 +1,28 @@
+/* Common style */
+.grid {
+	margin: 40px auto 120px;
+	width: 320px; 
+	position: relative;
+	overflow: hidden;
+}
+
+.grid a {
+	float: left;
+	max-width: 320px;
+	width: 320px;
+	color: #333;
+}
+
+.top, .bottom{
+	overflow: hidden;
+}
+
+#top{
+	height: 80px;
+}
+
+svg{
+	fill: #fff;
+	width: 100%;
+	
+}
