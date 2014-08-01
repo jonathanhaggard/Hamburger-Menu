@@ -13,6 +13,8 @@
 		<link rel="stylesheet" type="text/css" href="css/demo.css" />
 		<link rel="stylesheet" type="text/css" href="css/component.css" />
 		<script src="js/snap.svg-min.js"></script>
+		<script src="http://code.jquery.com/jquery-2.1.1.min.js"></script>
+		
 		<!--[if IE]>
   		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
@@ -56,7 +58,8 @@
 					var speed = 330,
 						easing = mina.backout;
 
-					[].slice.call ( document.querySelectorAll( 'span' ) ).forEach( function( el ) {
+					$('section').hover(function(){
+					 $(this).find('span').each(function(index, el){
 						var s = Snap( el.querySelector( 'svg' ) ), path = s.select( 'path' ),
 							pathConfig = {
 								from : path.attr( 'd' ),
@@ -70,7 +73,8 @@
 						el.addEventListener( 'mouseleave', function() {
 							path.animate( { 'path' : pathConfig.from }, speed, easing );
 						} );
-					} );
+					 });
+					});
 				}
 
 				init();
