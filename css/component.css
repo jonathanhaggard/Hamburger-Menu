@@ -61,15 +61,14 @@ transition: all .1s ease-out;
 }
 
 .grid:hover .top svg{
-	fill: #d9a23d;
+	fill: #fcb63d;
 }
 .grid:hover .mid svg{
-	fill: #730606;
+	fill: #d02200;
 }
 .grid:hover .bottom svg{
-	fill: #a66124;
+	fill: #995b34;
 }
-
 
 .active{
 	top: 170px;
@@ -99,7 +98,7 @@ transition: all .1s ease-out;
 }
 .active .topclicked svg{
 	-webkit-transform: rotate(45deg) scale(.3) translateY(133px) translateX(144px);
-	fill: #730606;
+	fill: #d02200;
 	
 	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.270, 1); /* older webkit */
 	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.270, 1.165); 
@@ -116,7 +115,7 @@ transition: all .1s ease-out;
 
 .active .bottomclicked svg{
 	-webkit-transform: rotate(-45deg) scale(.3) translateY(-225px) translateX(240px);
-	fill: #730606;
+	fill: #d02200;
 	
 	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.270, 1); /* older webkit */
 	-webkit-transition: all 500ms cubic-bezier(0.175, 0.885, 0.270, 1.165); 
@@ -131,20 +130,22 @@ transition: all .1s ease-out;
 	transition-timing-function: cubic-bezier(0.175, 0.885, 0.270, 1.165); /* custom */
 }
 
+
+.active:hover .topclicked svg{
+	-webkit-transform: rotate(0deg) scale(1) translateY(0px) translateX(0px);
+	fill: #fcb63d;
+}
 .active:hover .midclicked svg{
 	-webkit-transform: scale(1);
 	opacity: 1;
-	fill: #730606;
+	fill: #d02200;
 }
-.active:hover .topclicked svg{
-	-webkit-transform: rotate(0deg) scale(1) translateY(0px) translateX(0px);
-	fill: #d9a23d;
-}
-
 .active:hover .bottomclicked svg{
 	-webkit-transform: rotate(0deg) scale(1) translateY(0px) translateX(0px);
-	fill: #a66124;
+	fill: #995b34;
 }
+
+
 
 .top, .bottom{
 	overflow: hidden;
